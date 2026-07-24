@@ -1,0 +1,217 @@
+# ggpalettes
+
+`ggpalettes` provides 26 original colour palettes and native colour/fill
+scales for `ggplot2`. Its compact `pal_*()` and `scale_*()` interface
+will feel familiar to users of scientific palette packages such as
+`ggsci`, while the catalogue focuses on balanced, publication-ready
+colours for the [ggcraft](https://github.com/YaoxiangLi/ggcraft)
+ecosystem.
+
+![The ggpalettes catalogue](reference/figures/palette-overview.png)
+
+The ggpalettes catalogue
+
+## Installation
+
+``` r
+
+# install.packages("pak")
+pak::pak("YaoxiangLi/ggpalettes")
+```
+
+## Usage
+
+``` r
+
+library(ggpalettes)
+library(ggplot2)
+
+gg_palette_names()
+gg_palette_info(type = "sequential")
+
+# Palette functions: pal_name()(n)
+pal_meadow()(6)
+pal_aurora()(12)
+
+ggplot(iris, aes(Sepal.Length, Sepal.Width, colour = Species)) +
+  geom_point(size = 3) +
+  scale_colour_clinical() +
+  theme_minimal()
+
+ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
+  geom_raster() +
+  scale_fill_ember() +
+  theme_minimal()
+```
+
+Every palette has `pal_*()`, `scale_color_*()`, `scale_colour_*()`, and
+`scale_fill_*()` forms. Generic interfaces are also available:
+
+``` r
+
+scale_colour_ggpalette("atelier")
+scale_fill_ggpalette("balance")
+scale_fill_ggpalette("ocean", binned = TRUE)
+```
+
+Categorical palettes default to discrete scales. Sequential and
+diverging palettes default to continuous scales, so most plots need no
+scale-mode argument.
+
+## Catalogue
+
+- Categorical: `meadow`, `atelier`, `clinical`, `spectrum`, `pastel`,
+  `earth`, `midnight`, `floral`, `coastal`, and `harvest`.
+- Sequential: `aurora`, `ocean`, `ember`, `forest`, `orchid`, `slate`,
+  `sunrise`, `glacier`, `berry`, and `sand`.
+- Diverging: `balance`, `temperature`, `earthsky`, `rosepine`, `lagoon`,
+  and `violetgold`.
+
+Use
+[`gg_palette_plot()`](https://yaoxiangli.github.io/ggpalettes/reference/gg_palette_plot.md)
+to draw all or part of the catalogue. Use
+[`gg_palette_check()`](https://yaoxiangli.github.io/ggpalettes/reference/gg_palette_check.md)
+to screen CIE Lab separation and contrast against a selected background.
+
+``` r
+
+gg_palette_plot(type = "diverging", n = 9)
+gg_palette_check("meadow", background = "white")
+```
+
+## Development status
+
+The public API is tested on Windows, macOS, and Linux through
+`R CMD check`.
+
+## License
+
+MIT © Yaoxiang Li
+
+# Package index
+
+## All functions
+
+- [`gg_palette()`](https://yaoxiangli.github.io/ggpalettes/reference/gg_palette.md)
+  : Retrieve a curated colour palette
+- [`gg_palette_check()`](https://yaoxiangli.github.io/ggpalettes/reference/gg_palette_check.md)
+  : Check palette separation and background contrast
+- [`gg_palette_info()`](https://yaoxiangli.github.io/ggpalettes/reference/gg_palette_info.md)
+  : Inspect the ggpalettes catalogue
+- [`gg_palette_names()`](https://yaoxiangli.github.io/ggpalettes/reference/gg_palette_names.md)
+  : List available ggpalettes palettes
+- [`gg_palette_plot()`](https://yaoxiangli.github.io/ggpalettes/reference/gg_palette_plot.md)
+  : Plot a palette catalogue
+- [`pal_meadow()`](https://yaoxiangli.github.io/ggpalettes/reference/named_palettes.md)
+  [`pal_atelier()`](https://yaoxiangli.github.io/ggpalettes/reference/named_palettes.md)
+  [`pal_clinical()`](https://yaoxiangli.github.io/ggpalettes/reference/named_palettes.md)
+  [`pal_spectrum()`](https://yaoxiangli.github.io/ggpalettes/reference/named_palettes.md)
+  [`pal_pastel()`](https://yaoxiangli.github.io/ggpalettes/reference/named_palettes.md)
+  [`pal_earth()`](https://yaoxiangli.github.io/ggpalettes/reference/named_palettes.md)
+  [`pal_midnight()`](https://yaoxiangli.github.io/ggpalettes/reference/named_palettes.md)
+  [`pal_floral()`](https://yaoxiangli.github.io/ggpalettes/reference/named_palettes.md)
+  [`pal_coastal()`](https://yaoxiangli.github.io/ggpalettes/reference/named_palettes.md)
+  [`pal_harvest()`](https://yaoxiangli.github.io/ggpalettes/reference/named_palettes.md)
+  [`pal_aurora()`](https://yaoxiangli.github.io/ggpalettes/reference/named_palettes.md)
+  [`pal_ocean()`](https://yaoxiangli.github.io/ggpalettes/reference/named_palettes.md)
+  [`pal_ember()`](https://yaoxiangli.github.io/ggpalettes/reference/named_palettes.md)
+  [`pal_forest()`](https://yaoxiangli.github.io/ggpalettes/reference/named_palettes.md)
+  [`pal_orchid()`](https://yaoxiangli.github.io/ggpalettes/reference/named_palettes.md)
+  [`pal_slate()`](https://yaoxiangli.github.io/ggpalettes/reference/named_palettes.md)
+  [`pal_sunrise()`](https://yaoxiangli.github.io/ggpalettes/reference/named_palettes.md)
+  [`pal_glacier()`](https://yaoxiangli.github.io/ggpalettes/reference/named_palettes.md)
+  [`pal_berry()`](https://yaoxiangli.github.io/ggpalettes/reference/named_palettes.md)
+  [`pal_sand()`](https://yaoxiangli.github.io/ggpalettes/reference/named_palettes.md)
+  [`pal_balance()`](https://yaoxiangli.github.io/ggpalettes/reference/named_palettes.md)
+  [`pal_temperature()`](https://yaoxiangli.github.io/ggpalettes/reference/named_palettes.md)
+  [`pal_earthsky()`](https://yaoxiangli.github.io/ggpalettes/reference/named_palettes.md)
+  [`pal_rosepine()`](https://yaoxiangli.github.io/ggpalettes/reference/named_palettes.md)
+  [`pal_lagoon()`](https://yaoxiangli.github.io/ggpalettes/reference/named_palettes.md)
+  [`pal_violetgold()`](https://yaoxiangli.github.io/ggpalettes/reference/named_palettes.md)
+  : Named ggpalettes palette functions
+- [`scale_colour_meadow()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_color_meadow()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_fill_meadow()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_colour_atelier()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_color_atelier()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_fill_atelier()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_colour_clinical()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_color_clinical()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_fill_clinical()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_colour_spectrum()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_color_spectrum()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_fill_spectrum()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_colour_pastel()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_color_pastel()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_fill_pastel()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_colour_earth()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_color_earth()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_fill_earth()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_colour_midnight()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_color_midnight()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_fill_midnight()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_colour_floral()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_color_floral()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_fill_floral()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_colour_coastal()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_color_coastal()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_fill_coastal()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_colour_harvest()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_color_harvest()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_fill_harvest()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_colour_aurora()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_color_aurora()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_fill_aurora()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_colour_ocean()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_color_ocean()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_fill_ocean()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_colour_ember()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_color_ember()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_fill_ember()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_colour_forest()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_color_forest()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_fill_forest()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_colour_orchid()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_color_orchid()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_fill_orchid()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_colour_slate()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_color_slate()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_fill_slate()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_colour_sunrise()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_color_sunrise()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_fill_sunrise()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_colour_glacier()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_color_glacier()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_fill_glacier()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_colour_berry()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_color_berry()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_fill_berry()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_colour_sand()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_color_sand()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_fill_sand()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_colour_balance()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_color_balance()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_fill_balance()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_colour_temperature()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_color_temperature()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_fill_temperature()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_colour_earthsky()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_color_earthsky()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_fill_earthsky()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_colour_rosepine()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_color_rosepine()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_fill_rosepine()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_colour_lagoon()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_color_lagoon()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_fill_lagoon()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_colour_violetgold()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_color_violetgold()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  [`scale_fill_violetgold()`](https://yaoxiangli.github.io/ggpalettes/reference/named_scales.md)
+  : Named ggpalettes scales
+- [`pal_ggpalette()`](https://yaoxiangli.github.io/ggpalettes/reference/pal_ggpalette.md)
+  : Create a palette function
+- [`scale_colour_ggpalette()`](https://yaoxiangli.github.io/ggpalettes/reference/scale_colour_ggpalette.md)
+  [`scale_color_ggpalette()`](https://yaoxiangli.github.io/ggpalettes/reference/scale_colour_ggpalette.md)
+  [`scale_fill_ggpalette()`](https://yaoxiangli.github.io/ggpalettes/reference/scale_colour_ggpalette.md)
+  : ggplot2 colour and fill scales using ggpalettes
+
