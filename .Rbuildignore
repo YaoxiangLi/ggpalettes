@@ -3,6 +3,7 @@
 ^\.Rproj\.user$
 ^README\.Rmd$
 ^_pkgdown\.yml$
+^cran-comments\.md$
 ^check-clean$
 ^check-final$
 ^ggpalettes\.Rcheck$
