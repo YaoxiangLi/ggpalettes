@@ -2,3 +2,7 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^README\.Rmd$
+^check-clean$
+^check-final$
+^ggpalettes\.Rcheck$
+^ggpalettes_[0-9.]+\.tar\.gz$

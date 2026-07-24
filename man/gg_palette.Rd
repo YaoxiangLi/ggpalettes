@@ -4,19 +4,26 @@
 \alias{gg_palette}
 \title{Retrieve a curated colour palette}
 \usage{
-gg_palette(name = "aurora", n = NULL, direction = 1, space = c("Lab", "rgb"))
+gg_palette(
+  name = "meadow",
+  n = NULL,
+  direction = 1,
+  alpha = 1,
+  space = c("Lab", "rgb")
+)
 }
 \arguments{
 \item{name}{Palette name. See \code{\link[=gg_palette_names]{gg_palette_names()}}.}
 
 \item{n}{Number of colours to return. When \code{NULL}, returns the original
-palette. Values larger than the original palette are interpolated.}
+anchors. Larger values are interpolated.}
 
 \item{direction}{Palette direction: \code{1} for the original order or \code{-1} for
 the reversed order.}
 
-\item{space}{Colour space used when interpolation is required. One of
-\code{"Lab"} or \code{"rgb"}.}
+\item{alpha}{Opacity between 0 and 1.}
+
+\item{space}{Colour space used for interpolation: Lab or rgb.}
 }
 \value{
 A character vector of hexadecimal colour values.
@@ -25,7 +32,7 @@ A character vector of hexadecimal colour values.
 Retrieve a curated colour palette
 }
 \examples{
-gg_palette("aurora")
+gg_palette("meadow")
 gg_palette("ocean", n = 10)
-gg_palette("ember", direction = -1)
+gg_palette("ember", direction = -1, alpha = 0.8)
 }

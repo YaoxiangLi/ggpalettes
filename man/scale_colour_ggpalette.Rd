@@ -6,31 +6,61 @@
 \alias{scale_fill_ggpalette}
 \title{ggplot2 colour and fill scales using ggpalettes}
 \usage{
-scale_colour_ggpalette(name = "aurora", discrete = TRUE, direction = 1, ...)
+scale_colour_ggpalette(
+  name = "meadow",
+  discrete = NULL,
+  binned = FALSE,
+  alpha = 1,
+  direction = 1,
+  space = c("Lab", "rgb"),
+  ...
+)
 
-scale_color_ggpalette(name = "aurora", discrete = TRUE, direction = 1, ...)
+scale_color_ggpalette(
+  name = "meadow",
+  discrete = NULL,
+  binned = FALSE,
+  alpha = 1,
+  direction = 1,
+  space = c("Lab", "rgb"),
+  ...
+)
 
-scale_fill_ggpalette(name = "aurora", discrete = TRUE, direction = 1, ...)
+scale_fill_ggpalette(
+  name = "meadow",
+  discrete = NULL,
+  binned = FALSE,
+  alpha = 1,
+  direction = 1,
+  space = c("Lab", "rgb"),
+  ...
+)
 }
 \arguments{
-\item{name}{Palette name. See \code{\link[=gg_palette_names]{gg_palette_names()}}.}
+\item{name}{Palette name.}
 
-\item{discrete}{Whether to construct a discrete scale. Set to \code{FALSE} for a
-continuous gradient.}
+\item{discrete}{Use a discrete scale. \code{NULL} selects from palette type.}
 
-\item{direction}{Palette direction: \code{1} or \code{-1}.}
+\item{binned}{Use a binned continuous scale.}
 
-\item{...}{Additional arguments passed to the underlying \code{ggplot2} scale.}
+\item{alpha}{Opacity between 0 and 1.}
+
+\item{direction}{Palette direction: 1 or -1.}
+
+\item{space}{Interpolation colour space.}
+
+\item{...}{Additional arguments passed to the ggplot2 scale.}
 }
 \value{
-A \code{ggplot2} scale object.
+A ggplot2 scale object.
 }
 \description{
-ggplot2 colour and fill scales using ggpalettes
+When \code{discrete} is \code{NULL}, categorical palettes use a discrete scale and
+sequential/diverging palettes use a continuous gradient.
 }
 \examples{
 library(ggplot2)
 ggplot(iris, aes(Sepal.Length, Sepal.Width, colour = Species)) +
   geom_point(size = 2) +
-  scale_colour_ggpalette("clinical")
+  scale_colour_ggpalette("meadow")
 }

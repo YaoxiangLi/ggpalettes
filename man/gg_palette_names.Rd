@@ -4,7 +4,10 @@
 \alias{gg_palette_names}
 \title{List available ggpalettes palettes}
 \usage{
-gg_palette_names()
+gg_palette_names(type = c("all", .palette_types))
+}
+\arguments{
+\item{type}{Palette type: all, categorical, sequential, or diverging.}
 }
 \value{
 A character vector containing the available palette names.
@@ -14,4 +17,5 @@ List available ggpalettes palettes
 }
 \examples{
 gg_palette_names()
+gg_palette_names("diverging")
 }
