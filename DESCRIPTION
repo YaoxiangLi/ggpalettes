@@ -1,0 +1,22 @@
+Package: ggpalettes
+Title: Curated Colour Palettes and Scales for 'ggplot2'
+Version: 0.1.0
+Authors@R:
+    person("Yaoxiang", "Li", email = "liyaoxiang@outlook.com",
+           role = c("aut", "cre"))
+Description: Provides curated, colour-blind-conscious palettes for scientific
+    graphics, together with discrete and continuous colour and fill scales for
+    'ggplot2'. Palettes can also be retrieved as hexadecimal colour vectors for
+    use in base graphics and other visualization systems.
+License: MIT + file LICENSE
+URL: https://github.com/YaoxiangLi/ggpalettes
+BugReports: https://github.com/YaoxiangLi/ggpalettes/issues
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+Imports:
+    ggplot2,
+    grDevices
+Suggests:
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Config/roxygen2/version: 8.0.0
