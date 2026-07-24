@@ -11,7 +11,8 @@ Description: Provides a broad catalogue of original categorical, sequential,
     be retrieved as hexadecimal colour vectors for use in base graphics and
     other visualization systems.
 License: MIT + file LICENSE
-URL: https://github.com/YaoxiangLi/ggpalettes
+URL: https://yaoxiangli.github.io/ggpalettes/,
+    https://github.com/YaoxiangLi/ggpalettes
 BugReports: https://github.com/YaoxiangLi/ggpalettes/issues
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

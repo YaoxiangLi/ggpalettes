@@ -2,6 +2,7 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^README\.Rmd$
+^_pkgdown\.yml$
 ^check-clean$
 ^check-final$
 ^ggpalettes\.Rcheck$
